@@ -1,14 +1,9 @@
-.theme-light-image {
-    display: block;
-}
-.theme-dark-image {
-    display: none;
+/* Basic CSS rules */
+body {
+    text-align: justify;
 }
 
-html[data-theme="dark"] .theme-light-image {
-    display: none;
-}
-html[data-theme="dark"] .theme-dark-image {
-    display: block;
-}
+
+/* Add more styles as needed */
+
 

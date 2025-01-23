@@ -1,0 +1,23 @@
+Algoritmo PositivoNegativoParImpar
+    Escribir "Ingrese un número:"
+    Leer numero
+    
+    mensaje = "El numero es "
+    complemento_1 = "negativo "
+    complemento_2 = "e impar"
+	
+    Si numero = 0 Entonces
+        complemento_1 = "cero"
+        complemento_2 = ""
+    Sino
+        Si numero > 0 Entonces
+            complemento_1 = "positivo "
+		FinSi
+        Si numero MOD 2 = 0 Entonces
+			complemento_2 = "y par"
+		FinSi
+	FinSi
+		
+	Escribir mensaje + complemento_1 + complemento_2
+		
+FinAlgoritmo

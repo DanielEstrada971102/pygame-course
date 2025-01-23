@@ -1,0 +1,13 @@
+Algoritmo PromedioCalificaciones
+    Escribir "Acontinuacion debe ingresae las calificacion, cuando ya estén todas oprima ENTER..."
+    suma = 0
+    cantidad = 0
+    Leer calificacion
+    Mientras calificacion != ""
+        suma = suma + ConvertirANumero(calificacion)
+        cantidad = cantidad + 1
+        Leer calificacion
+    FinMientras
+    promedio = suma / cantidad
+    Escribir "El promedio es: ", promedio
+FinAlgoritmo

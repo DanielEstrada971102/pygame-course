@@ -21,7 +21,7 @@ author = 'Daniel Estrada'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.githubpages','myst_parser', "sphinx.ext.viewcode"]
+extensions = ['sphinx.ext.githubpages','myst_parser', "sphinx.ext.viewcode", "sphinx_togglebutton", "sphinx_design", "sphinx_copybutton"]
 
 source_suffix = ['.rst', '.md']
 
@@ -38,7 +38,7 @@ highlight_language = 'pseudocode'
 
 html_theme = 'sphinx_book_theme'#'alabaster'
 html_static_path = ['_static']
-# html_css_files = ['./_static/styles.css']
+html_css_files = ['./_static/styles.css']
 html_title = 'PyGame para aprender Python'
 
 

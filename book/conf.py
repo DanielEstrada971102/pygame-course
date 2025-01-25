@@ -21,7 +21,7 @@ author = 'Daniel Estrada'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.githubpages','myst_parser', "sphinx.ext.viewcode", "sphinx_togglebutton", "sphinx_design", "sphinx_copybutton"]
+extensions = ['sphinx.ext.githubpages','myst_parser', "sphinx.ext.viewcode", "sphinx_togglebutton", "sphinx_design", "sphinx_copybutton", "sphinx.ext.autosectionlabel"]
 
 source_suffix = ['.rst', '.md']
 

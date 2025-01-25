@@ -1,8 +1,19 @@
 Conceptos Básicos de Programación
 =================================
-El siguiente video es un gran material divulgativo que permite digerir el concepto de programar como
-una forma de dar instrucciones a una computadora desde un enfoque historico. Es recomendable que tome
-unos minutos para verlo antes de continuar.
+En términos simples, programar es el proceso de dar instrucciones a una computadora para que realice una tarea.
+Estas instrucciones son interpretadas por la computadora en lenguaje de máquina, es decir, en una serie de ceros y unos que
+representan las operaciones a ejecutar. Para poder comunicarnos con la computadora, se utilizan lenguajes de programación
+que permiten escribir instrucciones de manera más comprensible para los humanos. Estas instrucciones se traducen a lenguaje de máquina
+a través de compiladores o intérpretes, según el lenguaje de programación utilizado. La siguiente imagen ilustra este proceso:
+
+.. raw:: html
+
+    <div style="text-align:center">
+        <img src="../../_static/programing-ilustration-spanish.png" width=650>
+    </div>
+
+El siguiente video es un excelente material divulgativo que ayuda a comprender el concepto de programación desde un enfoque histórico.
+Es recomendable dedicar unos minutos a verlo antes de continuar.
 
 .. raw:: html
 
@@ -10,34 +21,33 @@ unos minutos para verlo antes de continuar.
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Ca9Z23iqcwQ" frameborder="0" allowfullscreen></iframe>
     </div>
 
-
 Algoritmo
 ---------
-Es una secuencia de **pasos** finitos y ordenados **que permiten resolver un problema o realizar una tarea**. 
-Un buen algoritmo debe ser preciso, es decir, cada paso debe estar claramente definido. Adicionalmente, debe 
-ser finito para poder llegar a la solución del problema. Este también debe plantearse de la manera más eficiente posible, es decir, 
-los pasos deben poder ser realizarse en el menor tiempo.
+Un **algoritmo** es una secuencia finita y ordenada de **pasos** que permiten resolver un problema o realizar una tarea.
+Un buen algoritmo debe ser preciso, es decir, cada paso debe estar claramente definido. Además, debe ser finito, garantizando
+que la solución del problema se pueda alcanzar. También debe ser eficiente, permitiendo resolver la tarea en el menor tiempo y
+con los menores recursos posibles.
 
-Cuando se comienza a programar, una de las cosas más importante a desarrollar es la **lógica**, es decir, la capacidad de
-pensar de manera estructurada y ordenada, para ser capaces de plantear los minimos pasos necesarios para resolver la tarea. 
+Al comenzar a programar, una de las habilidades más importantes a desarrollar es la **lógica**, es decir, la capacidad de
+pensar de manera estructurada y ordenada para identificar los pasos mínimos necesarios para resolver la tarea.
 
-Hay que tener en cuenta que la solución a un problema puede tener diferentes algoritmos o métodos que son completamente validos,
-la eleccion de uno u otro dependera de la persona que lo desarrolle y de los factores que se quieran priorizar, como la velocidad de procesamiento,
-la cantidad de memoria que se utilice, la facilidad de lectura del codigo, la interaccion con el usuario, entre otros.
+Es importante tener en cuenta que un problema puede tener múltiples algoritmos o métodos válidos. La elección de uno u otro dependerá
+del programador y de los factores que se deseen priorizar, como la velocidad de procesamiento, la cantidad de memoria utilizada,
+la legibilidad del código, la interacción con el usuario, entre otros.
 
 .. rubric:: Ejemplos
 
 1. **Problema**: Calcular la suma de dos números.
-    - **Informacion de entrada**: Dos números enteros.
-    - **Resultado o Salida**: La suma de los dos números.
+    - **Información de entrada**: Dos números enteros.
+    - **Resultado o salida**: La suma de los dos números.
 
-        1. Recibir y guardar los valores ingresados
+        1. Recibir y guardar los valores ingresados.
         2. Sumarlos.
         3. Retornar el resultado de la suma.
 
 2. **Problema**: Preparar un sándwich.
-    - **Informacion de entrada**: Tamaño (pisos), lista de ingredientes, etc...
-    - **Resultado o Salida**: Un sándwich listo para comer.
+    - **Información de entrada**: Tamaño (pisos), lista de ingredientes, etc.
+    - **Resultado o salida**: Un sándwich listo para comer.
 
         1. Tomar dos rebanadas de pan.
         2. Agregar cada ingrediente de la lista a una rebanada de pan.
@@ -46,8 +56,8 @@ la cantidad de memoria que se utilice, la facilidad de lectura del codigo, la in
         5. Servir el sándwich.
 
 3. **Problema**: Encontrar el número mayor en una lista.
-    - **Informacion de entrada**: Una lista de números.
-    - **Resultado o Salida**: El número mayor de la lista.
+    - **Información de entrada**: Una lista de números.
+    - **Resultado o salida**: El número mayor de la lista.
 
         1. Tomar una lista de números.
         2. Asignar el primer número como el mayor.
@@ -58,19 +68,19 @@ la cantidad de memoria que se utilice, la facilidad de lectura del codigo, la in
 Pseudocódigo
 ------------
 .. note::
-    Instale **PSeInt** para practicar pseudocódigo. Lo necesitarás de ahora en adelante.
+    Instale **PSeInt** para practicar pseudocódigo. Lo necesitará de ahora en adelante.
 
 El pseudocódigo es una forma de representar algoritmos utilizando un lenguaje similar a la
-programación pero sin seguir una sintaxis estricta. Sirve para diseñar soluciones de manera comprensible
-antes de codificarlas.
+programación pero sin seguir una sintaxis estricta. Su objetivo es diseñar soluciones de manera comprensible
+antes de codificarlas en un lenguaje de programación.
 
-Para plantear pseudocódigo no hace falta más que lapiz y papel, sin embargo, existen herramientas como
-`**PSeInt** <https://pseint.sourceforge.net/slide/pseint.html>`_ que permiten escribir y probar algoritmos 
-de manera sencilla y cercano a lo que pasaria en un lenguaje de programación.
+Para escribir pseudocódigo, solo se necesita lápiz y papel. Sin embargo, existen herramientas como
+`**PSeInt** <https://pseint.sourceforge.net/slide/pseint.html>`_ que permiten escribir y probar algoritmos
+de manera sencilla y cercana a un lenguaje de programación real.
 
-Puede descargar el instalador de PSeInt `aqui <https://pseint.sourceforge.net/index.php?page=descargas.php>`_, y puede
-revisar la documentación oficial en este `link <https://pseint.sourceforge.net/index.php?page=documentacion.php>`_. Adicionalmente,
-puede encontrar diversos tutoriales en youtube como por ejemplo `este <https://www.youtube.com/watch?v=FvibfpSVFBw&list=PLAzlSdU-KYwXllXcUCW-BylQZemcDV798>`_.
+Puede descargar el instalador de PSeInt `aquí <https://pseint.sourceforge.net/index.php?page=descargas.php>`_, y puede
+revisar la documentación oficial en este `enlace <https://pseint.sourceforge.net/index.php?page=documentacion.php>`_. Además,
+puede encontrar diversos tutoriales en YouTube, como por ejemplo `este <https://www.youtube.com/watch?v=FvibfpSVFBw&list=PLAzlSdU-KYwXllXcUCW-BylQZemcDV798>`_.
 
 .. rubric:: Ejemplos
 

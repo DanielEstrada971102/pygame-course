@@ -12,14 +12,31 @@ a través de compiladores o intérpretes, según el lenguaje de programación ut
         <img src="../../_static/programing-ilustration-spanish.png" width=650>
     </div>
 
-El siguiente video es un excelente material divulgativo que ayuda a comprender el concepto de programación desde un enfoque histórico.
-Es recomendable dedicar unos minutos a verlo antes de continuar.
+En youtube existen muchos canales dedicados a la programación, unos más generales, otros más especicos en las diferentes
+áreas de la programación. Particularmente, el canal de `EDTeam <https://www.youtube.com/@EDteam/>`_ tiene buen contenido  y además en español, 
+se recomienda tomarse un tiempo para ver algunos de sus videos. En especifico, la siguiente listas de reproducción podrían ser de interés:	
+
+.. raw:: html
+
+    <div style="text-align:center">
+        <iframe width=340 height=215 
+                src="https://www.youtube.com/embed/jrNv465OVr8" 
+                frameborder="0" allowfullscreen>
+        </iframe>
+        <iframe width=340 height=215
+                src="https://www.youtube.com/embed/videoseries?list=PLv6CkzbbGAlXU_AjgkmdcWuYWvHJtXkVO" 
+                frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+
+También, puede ver el siguiente video, que es un excelente material divulgativo que ayuda a comprender el concepto de programación desde un enfoque histórico.
 
 .. raw:: html
 
     <div style="text-align:center">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Ca9Z23iqcwQ" frameborder="0" allowfullscreen></iframe>
     </div>
+
 
 Algoritmo
 ---------
@@ -70,9 +87,9 @@ Pseudocódigo
 .. note::
     Instale **PSeInt** para practicar pseudocódigo. Lo necesitará de ahora en adelante.
 
-El pseudocódigo es una forma de representar algoritmos utilizando un lenguaje similar a la
-programación pero sin seguir una sintaxis estricta. Su objetivo es diseñar soluciones de manera comprensible
-antes de codificarlas en un lenguaje de programación.
+El pseudocódigo es una forma de representar algoritmos utilizando un **lenguaje similar a la
+programación** pero sin seguir una sintaxis particular ni muy estricta. **Su objetivo es diseñar soluciones de manera comprensible
+antes de codificarlas en un lenguaje de programación**.
 
 Para escribir pseudocódigo, solo se necesita lápiz y papel. Sin embargo, existen herramientas como
 `**PSeInt** <https://pseint.sourceforge.net/slide/pseint.html>`_ que permiten escribir y probar algoritmos
@@ -80,7 +97,16 @@ de manera sencilla y cercana a un lenguaje de programación real.
 
 Puede descargar el instalador de PSeInt `aquí <https://pseint.sourceforge.net/index.php?page=descargas.php>`_, y puede
 revisar la documentación oficial en este `enlace <https://pseint.sourceforge.net/index.php?page=documentacion.php>`_. Además,
-puede encontrar diversos tutoriales en YouTube, como por ejemplo `este <https://www.youtube.com/watch?v=FvibfpSVFBw&list=PLAzlSdU-KYwXllXcUCW-BylQZemcDV798>`_.
+puede encontrar diversos tutoriales en YouTube, como por ejemplo este:
+
+.. raw:: html
+
+    <div style="text-align:center">
+        <iframe width=560 height=315
+                src="https://www.youtube.com/embed/videoseries?list=PLAzlSdU-KYwXllXcUCW-BylQZemcDV798" 
+                frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
 
 .. rubric:: Ejemplos
 
@@ -90,8 +116,11 @@ puede encontrar diversos tutoriales en YouTube, como por ejemplo `este <https://
     :linenos:
 
     Algoritmo Suma
+        // Leer los valores de entrada
         Leer valor1, valor2
+        // Calcular la suma de los dos valores
         sum = valor1 + valor2
+        // Mostrar el resultado de la suma
         Escribir sum
     FinAlgoritmo
 
@@ -103,19 +132,22 @@ puede encontrar diversos tutoriales en YouTube, como por ejemplo `este <https://
 
     Algoritmo Suma
         Dimension nums[5]
-        // Leer los numeros
+        // Leer los numeros y almacenarlos en el arreglo nums
         Para i Desde 0 Hasta 4 Con Paso 1 Hacer
             Leer valor
             nums[i] = valor
         FinPara
         
+        // Inicializar la variable mayor con el primer elemento del arreglo
         mayor = nums[0] 
+        // Recorrer el arreglo para encontrar el número mayor
         Para Cada num En nums Hacer
             Si num > mayor Entonces
                 mayor = num
             FinSi
         FinPara
         
+        // Mostrar el número mayor encontrado
         Mostrar mayor
         
     FinAlgoritmo
@@ -123,7 +155,7 @@ puede encontrar diversos tutoriales en YouTube, como por ejemplo `este <https://
 
 Diagramas de Flujo
 ------------------
-Un diagrama de flujo es una representación gráfica del proceso codificado en pseudocodigo de un algoritmo 
+Un diagrama de flujo es una representación gráfica del **proceso ya codificado** en pseudocodigo de un algoritmo 
 mediante símbolos estandarizados. Esta representacion basta con ser legible y entendible para poder 
 representar la secuencia de pasos de un algoritmo, sin embargo, se usan como estandar los simbolos que 
 se muestran `acá <https://es.wikipedia.org/wiki/Diagrama_de_flujo>`_.

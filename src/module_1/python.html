@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.2. Introducción a Python &#8212; PyGame para aprender Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/./_static/styles.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=f85f4cfb"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/module_1/python';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2. Fundamentos de PyGame" href="../module_2/main.html" />
+    <link rel="prev" title="1.1. Conceptos Básicos de Programación" href="basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyGame para aprender Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="main.html">1. Introducción a la programación</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">1.1. Conceptos Básicos de Programación</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Introducción a Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/main.html">2. Fundamentos de PyGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/main.html">3. Creación de juegos simples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4/main.html">4. Introducción a los Motores de video juegos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/module_1/python.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-sencillos-con-python">Ejercicios sencillos (con Python)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularidad-del-codigo">modularidad del código</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduccion-a-python">
+<h1><span class="section-number">1.2. </span>Introducción a Python<a class="headerlink" href="#introduccion-a-python" title="Link to this heading">#</a></h1>
+<p>Python es uno de los lenguajes de programación más populares y versátiles en la actualidad. Su sintaxis
+sencilla y flexible, su inmensa comunidad y sus poderosas bibliotecas lo convierten en una excelente opción
+tanto para principiantes como para desarrolladores experimentados. Aprender Python no solo le permitirá
+desarrollar videojuegos, sino que también le abrirá oportunidades en todos los campos que se imagine, como por ejemplo:
+la inteligencia artificial, la ciencia de datos y la automatización, el desrollo de software y/o aplicaciones,
+seguridad informatica, etc.</p>
+<p>Existen una gran cantidad de fuentes de las cuales aprender Python, a cualquier ritmo y nivel de profundidad,
+dependera de sus objetivos y necesidades, si aprende lo necesario de forma intensiva o si prefiere profundizar
+y aprender de forma más lenta y detallada. En este curso, se tomara el primer enfoque, aprendiendo lo básico
+y necesario para tener un panorama general del lenguaje, y apartir de ellos se enfocará su uso a la creación
+de videojuegos con PyGame que es una de las principales bibliotecas para este fin en Python.</p>
+<p>En la página web <a class="reference external" href="https://quickref.me/">quickref.me/</a> encontrará una guía rápida de toda la sintaxis básica
+de python y otros multiples lenguajes. Los detalles profuntos los podra consultar direntamente en la documentación
+oficial de Python en <a class="reference external" href="https://docs.python.org/3/">docs.python.org/3/</a>. Otra web que considero interesante
+es <a class="reference external" href="https://realpython.com/">https://realpython.com/</a>.</p>
+<p>Si prefiere aprender a través de libros, a continuación se presentan algunas populares:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>Python Crash Course</em> de Eric Matthes. Un libro muy completo y amigable para principiantes, que abarca desde los</dt><dd><p>conceptos básicos hasta temas más avanzados ilustrando con proyectos prácticos.</p>
+</dd>
+</dl>
+</li>
+<li><p><em>Python distilled</em> de David Beazley. Un libro que permite profundizar más en el lenguaje. (<a class="reference external" href="https://dl.ebooksworld.ir/books/Python.Distilled.David.Beazley.Addison.Wesley.9780134173276.EBooksWorld.ir.pdf">link</a>)</p></li>
+<li><dl class="simple">
+<dt><em>Automate the Boring Stuff with Python</em> de Al Sweigart. Enfocado no en expertos de programación, sino en personas</dt><dd><p>que quieran adenrtrarse en la programación para automatizar tareas, es un buena lectura para entender las bondades
+y oportunidades que ofrece Python y la programacion en general.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Impractical python projects</em> de Lee Vaughan. Un libro que aborda el aprendizaje del lenguaje a través de</dt><dd><p>proyectos prácticos y divertidos. Viene muy bien para ver como se plantea la resolución de problemas y la estructuración de estos proyectos.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Y finalmente, debe saber que hay multiples canales de YouTube ofrecen tutoriales gratuitos sobre Python, aca dejo solo uno de ellos:</p>
+<div style="text-align:center">
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/videoseries?list=PLU8oAlHdN5BlvPxziopYZRd55pdqFwkeS"
+            frameborder="0" allowfullscreen>
+    </iframe>
+</div><p>Sin más que añadir, como es de esperar, <strong>lo primero es instalar Python</strong> y configurar su entorno de desarrollo.</p>
+<ul class="simple">
+<li><p>Instalación de Python a través de este <a class="reference external" href="https://www.python.org/downloads/">enlace</a>.</p></li>
+<li><dl class="simple">
+<dt>El entorno de desarrollo no requiere más que un editor de texto simple, pero si prefiere un IDE, puede instalar</dt><dd><p>algunos de los más populares como <a class="reference external" href="https://www.jetbrains.com/pycharm/download/#section=windows">PyCharm</a>,
+o <cite>Visual Studio Code &lt;https://code.visualstudio.com/&gt;</cite>. Ilustra un poco sobre este tema:</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div style="text-align:center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dx_sfmbV-bo" frameborder="0" allowfullscreen></iframe>
+</div><p>Una vez instalado Python y configurado su entorno, se puede comenzar por aprender la sintaxis básica del lenguaje, que como se mencionó,
+puede verlo en la página web <a class="reference external" href="https://quickref.me/">quickref.me/</a>. A continuación, se usaran los ejercicios planteados en la
+sección <a class="reference internal" href="basics.html#ejercicios-sencillos"><span class="std std-ref">anterior</span></a> para mostrar como se programa en python:</p>
+<section id="ejercicios-sencillos-con-python">
+<h2>Ejercicios sencillos (con Python)<a class="headerlink" href="#ejercicios-sencillos-con-python" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escribir un algoritmo que solicite el nombre del usuario y lo salude.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Por favor ingrese su nombre:&quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola ¡</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">! espero que estés teniendo un gran día :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Imprimir los números del 1 al 10 utilizando un bucle.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generar la tabla de multiplicar de un número ingresado por el usuario.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ingrese un número:&quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="linenos">3</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Determinar si un número ingresado es positivo, negativo o cero. Tambien Verificar si un número es par o impar.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ingrese un número:&quot;</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;El numero es &quot;</span>
+<span class="linenos"> 5</span><span class="n">complemento_1</span> <span class="o">=</span> <span class="s2">&quot;negativo &quot;</span>
+<span class="linenos"> 6</span><span class="n">complemento_2</span> <span class="o">=</span> <span class="s2">&quot;e impar&quot;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">if</span> <span class="n">numero</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos"> 9</span>    <span class="n">complemento_1</span> <span class="o">=</span> <span class="s2">&quot;cero&quot;</span>
+<span class="linenos">10</span>    <span class="n">complemento_2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos">11</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">12</span>    <span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">complemento_1</span> <span class="o">=</span> <span class="s2">&quot;positivo &quot;</span>
+<span class="linenos">14</span>    <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="n">complemento_2</span> <span class="o">=</span> <span class="s2">&quot;y par&quot;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span> <span class="o">+</span> <span class="n">complemento_1</span> <span class="o">+</span> <span class="n">complemento_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Calcular el promedio de un conjunto de calificaciones ingresadas.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A continuación debe ingresar las calificaciones, cuando ya estén todas oprima ENTER...&quot;</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 3</span><span class="n">cantidad</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos"> 6</span>    <span class="n">calificacion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="k">if</span> <span class="n">calificacion</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+<span class="linenos"> 8</span>        <span class="k">break</span>
+<span class="linenos"> 9</span>    <span class="n">suma</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">calificacion</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="n">cantidad</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">promedio</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">/</span> <span class="n">cantidad</span>
+<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El promedio es: </span><span class="si">{</span><span class="n">promedio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Calcular el área de un rectángulo ingresando la base y la altura.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">calcular_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ingrese la base del rectángulo:&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ingrese la altura del rectángulo:&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El área del rectángulo es: </span><span class="si">{</span><span class="n">calcular_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">altura</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Como ejercicio puede tratar de replicar los ejercicios de <a class="reference internal" href="basics.html#ejercicios-sencillos"><span class="std std-ref">la sección anterior</span></a> en Python.</p>
+</div>
+</section>
+<section id="modularidad-del-codigo">
+<h2>modularidad del código<a class="headerlink" href="#modularidad-del-codigo" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="basics.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>Conceptos Básicos de Programación</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../module_2/main.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Fundamentos de PyGame</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-sencillos-con-python">Ejercicios sencillos (con Python)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularidad-del-codigo">modularidad del código</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniel Estrada
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Daniel Estrada.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

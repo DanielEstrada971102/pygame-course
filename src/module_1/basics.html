@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1. Conceptos Básicos de Programación &#8212; PyGame para aprender Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/./_static/styles.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=f85f4cfb"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/module_1/basics';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="1.2. Introducción a Python" href="python.html" />
+    <link rel="prev" title="1. Introducción a la programación" href="main.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyGame para aprender Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="main.html">1. Introducción a la programación</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Conceptos Básicos de Programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">1.2. Introducción a Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/main.html">2. Fundamentos de PyGame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/main.html">3. Creación de juegos simples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4/main.html">4. Introducción a los Motores de video juegos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/module_1/basics.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conceptos Básicos de Programación</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo">Algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo">Pseudocódigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-de-flujo">Diagramas de Flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-sencillos">Ejercicios sencillos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desafios">Desafios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="conceptos-basicos-de-programacion">
+<h1><span class="section-number">1.1. </span>Conceptos Básicos de Programación<a class="headerlink" href="#conceptos-basicos-de-programacion" title="Link to this heading">#</a></h1>
+<p>En términos simples, programar es el proceso de dar instrucciones a una computadora para que realice una tarea.
+Estas instrucciones son interpretadas por la computadora en lenguaje de máquina, es decir, en una serie de ceros y unos que
+representan las operaciones a ejecutar. Para poder comunicarnos con la computadora, se utilizan lenguajes de programación
+que permiten escribir instrucciones de manera más comprensible para los humanos. Estas instrucciones se traducen a lenguaje de máquina
+a través de compiladores o intérpretes, según el lenguaje de programación utilizado. La siguiente imagen ilustra este proceso:</p>
+<div style="text-align:center">
+    <img src="../../_static/programing-ilustration-spanish.png" width=650>
+</div><p>En youtube existen muchos canales dedicados a la programación, unos más generales, otros más especicos en las diferentes
+áreas de la programación. Particularmente, el canal de <a class="reference external" href="https://www.youtube.com/&#64;EDteam/">EDTeam</a> tiene buen contenido  y además en español,
+se recomienda tomarse un tiempo para ver algunos de sus videos. En especifico, la siguiente listas de reproducción podrían ser de interés:</p>
+<div style="text-align:center">
+    <iframe width=340 height=215
+            src="https://www.youtube.com/embed/jrNv465OVr8"
+            frameborder="0" allowfullscreen>
+    </iframe>
+    <iframe width=340 height=215
+            src="https://www.youtube.com/embed/videoseries?list=PLv6CkzbbGAlXU_AjgkmdcWuYWvHJtXkVO"
+            frameborder="0" allowfullscreen>
+    </iframe>
+</div><p>También, puede ver el siguiente video, que es un excelente material divulgativo que ayuda a comprender el concepto de programación desde un enfoque histórico.</p>
+<div style="text-align:center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ca9Z23iqcwQ" frameborder="0" allowfullscreen></iframe>
+</div><section id="algoritmo">
+<h2>Algoritmo<a class="headerlink" href="#algoritmo" title="Link to this heading">#</a></h2>
+<p>Un <strong>algoritmo</strong> es una secuencia finita y ordenada de <strong>pasos</strong> que permiten resolver un problema o realizar una tarea.
+Un buen algoritmo debe ser preciso, es decir, cada paso debe estar claramente definido. Además, debe ser finito, garantizando
+que la solución del problema se pueda alcanzar. También debe ser eficiente, permitiendo resolver la tarea en el menor tiempo y
+con los menores recursos posibles.</p>
+<p>Al comenzar a programar, una de las habilidades más importantes a desarrollar es la <strong>lógica</strong>, es decir, la capacidad de
+pensar de manera estructurada y ordenada para identificar los pasos mínimos necesarios para resolver la tarea.</p>
+<p>Es importante tener en cuenta que un problema puede tener múltiples algoritmos o métodos válidos. La elección de uno u otro dependerá
+del programador y de los factores que se deseen priorizar, como la velocidad de procesamiento, la cantidad de memoria utilizada,
+la legibilidad del código, la interacción con el usuario, entre otros.</p>
+<p class="rubric">Ejemplos</p>
+<ol class="arabic">
+<li><dl>
+<dt><strong>Problema</strong>: Calcular la suma de dos números.</dt><dd><ul>
+<li><p><strong>Información de entrada</strong>: Dos números enteros.</p></li>
+<li><p><strong>Resultado o salida</strong>: La suma de los dos números.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Recibir y guardar los valores ingresados.</p></li>
+<li><p>Sumarlos.</p></li>
+<li><p>Retornar el resultado de la suma.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Problema</strong>: Preparar un sándwich.</dt><dd><ul>
+<li><p><strong>Información de entrada</strong>: Tamaño (pisos), lista de ingredientes, etc.</p></li>
+<li><p><strong>Resultado o salida</strong>: Un sándwich listo para comer.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Tomar dos rebanadas de pan.</p></li>
+<li><p>Agregar cada ingrediente de la lista a una rebanada de pan.</p></li>
+<li><p>Tapar con la otra rebanada de pan.</p></li>
+<li><p>Repetir los pasos 1-3 según el tamaño del sándwich.</p></li>
+<li><p>Servir el sándwich.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Problema</strong>: Encontrar el número mayor en una lista.</dt><dd><ul>
+<li><p><strong>Información de entrada</strong>: Una lista de números.</p></li>
+<li><p><strong>Resultado o salida</strong>: El número mayor de la lista.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Tomar una lista de números.</p></li>
+<li><p>Asignar el primer número como el mayor.</p></li>
+<li><p>Comparar con cada número en la lista.</p></li>
+<li><p>Si se encuentra un número mayor, actualizar la variable mayor.</p></li>
+<li><p>Al finalizar, devolver el número mayor.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="pseudocodigo">
+<h2>Pseudocódigo<a class="headerlink" href="#pseudocodigo" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Instale <strong>PSeInt</strong> para practicar pseudocódigo. Lo necesitará de ahora en adelante.</p>
+</div>
+<p>El pseudocódigo es una forma de representar algoritmos utilizando un <strong>lenguaje similar a la
+programación</strong> pero sin seguir una sintaxis particular ni muy estricta. <strong>Su objetivo es diseñar soluciones de manera comprensible
+antes de codificarlas en un lenguaje de programación</strong>.</p>
+<p>Para escribir pseudocódigo, solo se necesita lápiz y papel. Sin embargo, existen herramientas como
+<a class="reference external" href="https://pseint.sourceforge.net/slide/pseint.html">**PSeInt**</a> que permiten escribir y probar algoritmos
+de manera sencilla y cercana a un lenguaje de programación real.</p>
+<p>Puede descargar el instalador de PSeInt <a class="reference external" href="https://pseint.sourceforge.net/index.php?page=descargas.php">aquí</a>, y puede
+revisar la documentación oficial en este <a class="reference external" href="https://pseint.sourceforge.net/index.php?page=documentacion.php">enlace</a>. Además,
+puede encontrar diversos tutoriales en YouTube, como por ejemplo este:</p>
+<div style="text-align:center">
+    <iframe width=560 height=315
+            src="https://www.youtube.com/embed/videoseries?list=PLAzlSdU-KYwXllXcUCW-BylQZemcDV798"
+            frameborder="0" allowfullscreen>
+    </iframe>
+</div><p class="rubric">Ejemplos</p>
+<ol class="arabic simple">
+<li><p>Calcular la suma de dos números.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">Suma</span>
+<span class="linenos">2</span>    <span class="c">// Leer los valores de entrada</span>
+<span class="linenos">3</span>    <span class="k">Leer</span> <span class="n">valor1</span><span class="err">,</span> <span class="n">valor2</span>
+<span class="linenos">4</span>    <span class="c">// Calcular la suma de los dos valores</span>
+<span class="linenos">5</span>    <span class="n">sum</span> <span class="o">=</span> <span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span>
+<span class="linenos">6</span>    <span class="c">// Mostrar el resultado de la suma</span>
+<span class="linenos">7</span>    <span class="k">Escribir</span> <span class="n">sum</span>
+<span class="linenos">8</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Encontrar el número mayor en una lista.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">Suma</span>
+<span class="linenos"> 2</span>    <span class="k">Dimension</span> <span class="n">nums</span><span class="err">[</span><span class="m">5</span><span class="err">]</span>
+<span class="linenos"> 3</span>    <span class="c">// Leer los numeros y almacenarlos en el arreglo nums</span>
+<span class="linenos"> 4</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="m">4</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 5</span>        <span class="k">Leer</span> <span class="n">valor</span>
+<span class="linenos"> 6</span>        <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span> <span class="o">=</span> <span class="n">valor</span>
+<span class="linenos"> 7</span>    <span class="k">FinPara</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>    <span class="c">// Inicializar la variable mayor con el primer elemento del arreglo</span>
+<span class="linenos">10</span>    <span class="n">mayor</span> <span class="o">=</span> <span class="n">nums</span><span class="err">[</span><span class="m">0</span><span class="err">]</span>
+<span class="linenos">11</span>    <span class="c">// Recorrer el arreglo para encontrar el número mayor</span>
+<span class="linenos">12</span>    <span class="k">Para</span> <span class="k">Cada</span> <span class="n">num</span> <span class="k">En</span> <span class="n">nums</span> <span class="k">Hacer</span>
+<span class="linenos">13</span>        <span class="k">Si</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">mayor</span> <span class="k">Entonces</span>
+<span class="linenos">14</span>            <span class="n">mayor</span> <span class="o">=</span> <span class="n">num</span>
+<span class="linenos">15</span>        <span class="k">FinSi</span>
+<span class="linenos">16</span>    <span class="k">FinPara</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>    <span class="c">// Mostrar el número mayor encontrado</span>
+<span class="linenos">19</span>    <span class="k">Mostrar</span> <span class="n">mayor</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</section>
+<section id="diagramas-de-flujo">
+<h2>Diagramas de Flujo<a class="headerlink" href="#diagramas-de-flujo" title="Link to this heading">#</a></h2>
+<p>Un diagrama de flujo es una representación gráfica del <strong>proceso ya codificado</strong> en pseudocodigo de un algoritmo
+mediante símbolos estandarizados. Esta representacion basta con ser legible y entendible para poder
+representar la secuencia de pasos de un algoritmo, sin embargo, se usan como estandar los simbolos que
+se muestran <a class="reference external" href="https://es.wikipedia.org/wiki/Diagrama_de_flujo">acá</a>.</p>
+<p class="rubric">Ejemplos</p>
+<ol class="arabic simple">
+<li><p>Calcular la suma de dos números.</p></li>
+</ol>
+<div style="text-align:center">
+    <!-- <img src="../../_static/flow_diagram1_light.png" alt="Descripción de la imagen" widht=100x class="theme-light-image"> -->
+    <img src="../../_static/flow_diagram1_dark.png" alt="Descripción de la imagen" width=300x class="theme-dark-image">
+</div><ol class="arabic simple" start="2">
+<li><p>Encontrar el número mayor en una lista.</p></li>
+</ol>
+<div style="text-align:center">
+    <!-- <img src="../../_static/flow_diagram2_light.png" alt="Descripción de la imagen" widht=100x class="theme-light-image"> -->
+    <img src="../../_static/flow_diagram2_dark.png" alt="Descripción de la imagen" width=300x class="theme-dark-image">
+</div></section>
+<section id="ejercicios-sencillos">
+<h2>Ejercicios sencillos<a class="headerlink" href="#ejercicios-sencillos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escribir un algoritmo que solicite el nombre del usuario y lo salude.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">Saludo</span>
+<span class="linenos">2</span>	<span class="k">Escribir</span> <span class="s">&quot;Por favor ingrese su nombre:&quot;</span>
+<span class="linenos">3</span>	<span class="k">Leer</span> <span class="n">nombre</span>
+<span class="linenos">4</span>	<span class="k">Escribir</span> <span class="s">&quot;Hola ¡&quot;</span><span class="err">,</span> <span class="n">nombre</span><span class="err">,</span> <span class="s">&quot;! espero que estés teniendo un gran día :)&quot;</span>
+<span class="linenos">5</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Imprimir los números del 1 al 10 utilizando un bucle.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">ImprimirNumeros</span>
+<span class="linenos">2</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">1</span> <span class="k">Hasta</span> <span class="m">10</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">3</span>        <span class="k">Escribir</span> <span class="n">i</span>
+<span class="linenos">4</span>    <span class="k">FinPara</span>
+<span class="linenos">5</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generar la tabla de multiplicar de un número ingresado por el usuario.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">TablaMultiplicar</span>
+<span class="linenos">2</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese un número:&quot;</span>
+<span class="linenos">3</span>    <span class="k">Leer</span> <span class="n">numero</span>
+<span class="linenos">4</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">1</span> <span class="k">Hasta</span> <span class="m">10</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">5</span>        <span class="k">Escribir</span> <span class="n">numero</span><span class="err">,</span> <span class="s">&quot; x &quot;</span><span class="err">,</span> <span class="n">i</span><span class="err">,</span> <span class="s">&quot; = &quot;</span><span class="err">,</span> <span class="n">numero</span> <span class="o">*</span> <span class="n">i</span>
+<span class="linenos">6</span>    <span class="k">FinPara</span>
+<span class="linenos">7</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Determinar si un número ingresado es positivo, negativo o cero. Tambien Verificar si un número es par o impar.</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Opción 1</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">PositivoNegativoParImpar</span>
+<span class="linenos"> 2</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese un número:&quot;</span>
+<span class="linenos"> 3</span>    <span class="k">Leer</span> <span class="n">numero</span>
+<span class="linenos"> 4</span>    <span class="k">Si</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos"> 5</span>        <span class="k">Escribir</span> <span class="s">&quot;El número es positivo&quot;</span>
+<span class="linenos"> 6</span>    <span class="k">Sino</span>
+<span class="linenos"> 7</span>        <span class="k">Si</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos"> 8</span>            <span class="k">Escribir</span> <span class="s">&quot;El número es negativo&quot;</span>
+<span class="linenos"> 9</span>        <span class="k">Sino</span>
+<span class="linenos">10</span>            <span class="k">Escribir</span> <span class="s">&quot;El número es cero&quot;</span>
+<span class="linenos">11</span>        <span class="k">FinSi</span>
+<span class="linenos">12</span>    <span class="k">FinSi</span>
+<span class="linenos">13</span>    <span class="k">Si</span> <span class="n">numero</span> <span class="k">MOD</span> <span class="m">2</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos">14</span>        <span class="k">Escribir</span> <span class="s">&quot;El número es par&quot;</span>
+<span class="linenos">15</span>    <span class="k">Sino</span>
+<span class="linenos">16</span>        <span class="k">Escribir</span> <span class="s">&quot;El número es impar&quot;</span>
+<span class="linenos">17</span>    <span class="k">FinSi</span>
+<span class="linenos">18</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Opción 2</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">PositivoNegativoParImpar</span>
+<span class="linenos"> 2</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese un número:&quot;</span>
+<span class="linenos"> 3</span>    <span class="k">Leer</span> <span class="n">numero</span>
+<span class="linenos"> 4</span>    
+<span class="linenos"> 5</span>    <span class="n">mensaje</span> <span class="o">=</span> <span class="s">&quot;El numero es &quot;</span>
+<span class="linenos"> 6</span>    <span class="n">complemento_1</span> <span class="o">=</span> <span class="s">&quot;negativo &quot;</span>
+<span class="linenos"> 7</span>    <span class="n">complemento_2</span> <span class="o">=</span> <span class="s">&quot;e impar&quot;</span>
+<span class="linenos"> 8</span>	
+<span class="linenos"> 9</span>    <span class="k">Si</span> <span class="n">numero</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos">10</span>        <span class="n">complemento_1</span> <span class="o">=</span> <span class="s">&quot;cero&quot;</span>
+<span class="linenos">11</span>        <span class="n">complemento_2</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="linenos">12</span>    <span class="k">Sino</span>
+<span class="linenos">13</span>        <span class="k">Si</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos">14</span>            <span class="n">complemento_1</span> <span class="o">=</span> <span class="s">&quot;positivo &quot;</span>
+<span class="linenos">15</span>		<span class="k">FinSi</span>
+<span class="linenos">16</span>        <span class="k">Si</span> <span class="n">numero</span> <span class="k">MOD</span> <span class="m">2</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos">17</span>			<span class="n">complemento_2</span> <span class="o">=</span> <span class="s">&quot;y par&quot;</span>
+<span class="linenos">18</span>		<span class="k">FinSi</span>
+<span class="linenos">19</span>	<span class="k">FinSi</span>
+<span class="linenos">20</span>		
+<span class="linenos">21</span>	<span class="k">Escribir</span> <span class="n">mensaje</span> <span class="o">+</span> <span class="n">complemento_1</span> <span class="o">+</span> <span class="n">complemento_2</span>
+<span class="linenos">22</span>		
+<span class="linenos">23</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Calcular el promedio de un conjunto de calificaciones ingresadas.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">PromedioCalificaciones</span>
+<span class="linenos"> 2</span>    <span class="k">Escribir</span> <span class="s">&quot;Acontinuacion debe ingresae las calificacion, cuando ya estén todas oprima ENTER...&quot;</span>
+<span class="linenos"> 3</span>    <span class="n">suma</span> <span class="o">=</span> <span class="m">0</span>
+<span class="linenos"> 4</span>    <span class="n">cantidad</span> <span class="o">=</span> <span class="m">0</span>
+<span class="linenos"> 5</span>    <span class="k">Leer</span> <span class="n">calificacion</span>
+<span class="linenos"> 6</span>    <span class="k">Mientras</span> <span class="n">calificacion</span> <span class="err">!</span><span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="linenos"> 7</span>        <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="k">ConvertirANumero</span><span class="err">(</span><span class="n">calificacion</span><span class="err">)</span>
+<span class="linenos"> 8</span>        <span class="n">cantidad</span> <span class="o">=</span> <span class="n">cantidad</span> <span class="o">+</span> <span class="m">1</span>
+<span class="linenos"> 9</span>        <span class="k">Leer</span> <span class="n">calificacion</span>
+<span class="linenos">10</span>    <span class="k">FinMientras</span>
+<span class="linenos">11</span>    <span class="n">promedio</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">/</span> <span class="n">cantidad</span>
+<span class="linenos">12</span>    <span class="k">Escribir</span> <span class="s">&quot;El promedio es: &quot;</span><span class="err">,</span> <span class="n">promedio</span>
+<span class="linenos">13</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Calcular el área de un rectángulo ingresando la base y la altura.</p></li>
+</ol>
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Funcion</span> <span class="n">area</span> <span class="o">&lt;-</span> <span class="n">calcular_area</span> <span class="err">(</span><span class="n">b</span><span class="err">,</span> <span class="n">h</span><span class="err">)</span>
+<span class="linenos"> 2</span>	<span class="n">area</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="m">2</span>
+<span class="linenos"> 3</span><span class="k">FinFuncion</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">Algoritmo</span> <span class="k">AreaRectangulo</span>
+<span class="linenos"> 6</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese la base del rectángulo:&quot;</span>
+<span class="linenos"> 7</span>    <span class="k">Leer</span> <span class="n">base</span>
+<span class="linenos"> 8</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese la altura del rectángulo:&quot;</span>
+<span class="linenos"> 9</span>    <span class="k">Leer</span> <span class="n">altura</span>
+<span class="linenos">10</span>    <span class="k">Escribir</span> <span class="s">&quot;El área del rectángulo es: &quot;</span><span class="err">,</span> <span class="n">calcular_area</span><span class="err">(</span><span class="n">base</span><span class="err">,</span> <span class="n">altura</span><span class="err">)</span>
+<span class="linenos">11</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>En los siguientes ejercicio se puede desplegar la solución, sin embargo, <strong>INTENTE RESOLVERLO</strong> por su cuenta antes de revisarla.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7. Calcular la suma de los primeros N números naturales.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">SumaNumerosNaturales</span>
+<span class="linenos">2</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese un número N:&quot;</span>
+<span class="linenos">3</span>    <span class="k">Leer</span> <span class="k">N</span>
+<span class="linenos">4</span>    <span class="n">suma</span> <span class="o">=</span> <span class="m">0</span>
+<span class="linenos">5</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">1</span> <span class="k">Hasta</span> <span class="k">N</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">6</span>        <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">i</span>
+<span class="linenos">7</span>    <span class="k">FinPara</span>
+<span class="linenos">8</span>    <span class="k">Escribir</span> <span class="s">&quot;La suma de los primeros &quot;</span><span class="err">,</span> <span class="k">N</span><span class="err">,</span> <span class="s">&quot; números naturales es: &quot;</span><span class="err">,</span> <span class="n">suma</span>
+<span class="linenos">9</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">8. Determinar si un año ingresado es bisiesto.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">AnioBisiesto</span>
+<span class="linenos">2</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese un año:&quot;</span>
+<span class="linenos">3</span>    <span class="k">Leer</span> <span class="n">anio</span>
+<span class="linenos">4</span>    <span class="k">Si</span> <span class="err">(</span><span class="n">anio</span> <span class="err">%</span> <span class="m">4</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Y</span> <span class="n">anio</span> <span class="err">%</span> <span class="m">100</span> <span class="err">!</span><span class="o">=</span> <span class="m">0</span><span class="err">)</span> <span class="k">O</span> <span class="err">(</span><span class="n">anio</span> <span class="err">%</span> <span class="m">400</span> <span class="o">=</span> <span class="m">0</span><span class="err">)</span> <span class="k">Entonces</span>
+<span class="linenos">5</span>        <span class="k">Escribir</span> <span class="s">&quot;El año es bisiesto&quot;</span>
+<span class="linenos">6</span>    <span class="k">Sino</span>
+<span class="linenos">7</span>        <span class="k">Escribir</span> <span class="s">&quot;El año no es bisiesto&quot;</span>
+<span class="linenos">8</span>    <span class="k">FinSi</span>
+<span class="linenos">9</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">9. Convertir grados Celsius a Fahrenheit.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Funcion</span> <span class="n">fahrenheit</span> <span class="o">&lt;-</span> <span class="n">convertir_a_fahrenheit</span> <span class="err">(</span><span class="n">celsius</span><span class="err">)</span>
+<span class="linenos">2</span>    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="err">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="err">)</span> <span class="o">+</span> <span class="m">32</span>
+<span class="linenos">3</span><span class="k">FinFuncion</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">Algoritmo</span> <span class="k">CelsiusAFahrenheit</span>
+<span class="linenos">6</span>    <span class="k">Escribir</span> <span class="s">&quot;Ingrese la temperatura en grados Celsius:&quot;</span>
+<span class="linenos">7</span>    <span class="k">Leer</span> <span class="n">celsius</span>
+<span class="linenos">8</span>    <span class="k">Escribir</span> <span class="s">&quot;La temperatura en grados Fahrenheit es: &quot;</span><span class="err">,</span> <span class="n">convertir_a_fahrenheit</span><span class="err">(</span><span class="n">celsius</span><span class="err">)</span>
+<span class="linenos">9</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">10. Calcular el factorial de un número utilizando un bucle. (*)</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">Algoritmo</span> <span class="k">Factorial</span>
+<span class="linenos">2</span>    <span class="k">Leer</span> <span class="n">numero</span>
+<span class="linenos">3</span>    <span class="n">factorial</span> <span class="o">=</span> <span class="m">1</span>
+<span class="linenos">4</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">1</span> <span class="k">Hasta</span> <span class="n">numero</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">5</span>        <span class="n">factorial</span> <span class="o">=</span> <span class="n">factorial</span> <span class="o">*</span> <span class="n">i</span>
+<span class="linenos">6</span>    <span class="k">FinPara</span>
+<span class="linenos">7</span>    <span class="k">Escribir</span> <span class="n">factorial</span>
+<span class="linenos">8</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">11. Generar una secuencia de Fibonacci hasta un número dado.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">Fibonacci</span>
+<span class="linenos"> 2</span>    <span class="k">Leer</span> <span class="n">n</span>
+<span class="linenos"> 3</span>    <span class="n">a</span> <span class="o">=</span> <span class="m">0</span>
+<span class="linenos"> 4</span>    <span class="n">b</span> <span class="o">=</span> <span class="m">1</span>
+<span class="linenos"> 5</span>    <span class="k">Escribir</span> <span class="n">a</span>
+<span class="linenos"> 6</span>    <span class="k">Escribir</span> <span class="n">b</span>
+<span class="linenos"> 7</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">3</span> <span class="k">Hasta</span> <span class="n">n</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 8</span>        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="linenos"> 9</span>        <span class="k">Escribir</span> <span class="n">c</span>
+<span class="linenos">10</span>        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="linenos">11</span>        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+<span class="linenos">12</span>    <span class="k">FinPara</span>
+<span class="linenos">13</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">12. Ordenar un arreglo de 5 números ingresados por el usuario de menor a mayor. (*)</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">OrdenarArreglo</span>
+<span class="linenos"> 2</span>    <span class="k">Dimension</span> <span class="n">nums</span><span class="err">[</span><span class="m">5</span><span class="err">]</span>
+<span class="linenos"> 3</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="m">4</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 4</span>        <span class="k">Leer</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span>
+<span class="linenos"> 5</span>    <span class="k">FinPara</span>
+<span class="linenos"> 6</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="m">3</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 7</span>        <span class="k">Para</span> <span class="n">j</span> <span class="k">Desde</span> <span class="n">i</span><span class="o">+</span><span class="m">1</span> <span class="k">Hasta</span> <span class="m">4</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 8</span>            <span class="k">Si</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="err">[</span><span class="n">j</span><span class="err">]</span> <span class="k">Entonces</span>
+<span class="linenos"> 9</span>                <span class="n">temp</span> <span class="o">=</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span>
+<span class="linenos">10</span>                <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span> <span class="o">=</span> <span class="n">nums</span><span class="err">[</span><span class="n">j</span><span class="err">]</span>
+<span class="linenos">11</span>                <span class="n">nums</span><span class="err">[</span><span class="n">j</span><span class="err">]</span> <span class="o">=</span> <span class="n">temp</span>
+<span class="linenos">12</span>            <span class="k">FinSi</span>
+<span class="linenos">13</span>        <span class="k">FinPara</span>
+<span class="linenos">14</span>    <span class="k">FinPara</span>
+<span class="linenos">15</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="m">4</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">16</span>        <span class="k">Escribir</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span>
+<span class="linenos">17</span>    <span class="k">FinPara</span>
+<span class="linenos">18</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">13. Buscar un número específico en una lista de valores.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">BuscarNumero</span>
+<span class="linenos"> 2</span>    <span class="k">Dimension</span> <span class="n">nums</span><span class="err">[</span><span class="m">5</span><span class="err">]</span>
+<span class="linenos"> 3</span>    <span class="n">nums</span><span class="err">[</span><span class="m">0</span><span class="err">]</span> <span class="o">=</span> <span class="m">10</span>
+<span class="linenos"> 4</span>    <span class="n">nums</span><span class="err">[</span><span class="m">1</span><span class="err">]</span> <span class="o">=</span> <span class="m">20</span>
+<span class="linenos"> 5</span>    <span class="n">nums</span><span class="err">[</span><span class="m">2</span><span class="err">]</span> <span class="o">=</span> <span class="m">30</span>
+<span class="linenos"> 6</span>    <span class="n">nums</span><span class="err">[</span><span class="m">3</span><span class="err">]</span> <span class="o">=</span> <span class="m">40</span>
+<span class="linenos"> 7</span>    <span class="n">nums</span><span class="err">[</span><span class="m">4</span><span class="err">]</span> <span class="o">=</span> <span class="m">50</span>
+<span class="linenos"> 8</span>    <span class="k">Leer</span> <span class="n">buscar</span>
+<span class="linenos"> 9</span>    <span class="n">encontrado</span> <span class="o">=</span> <span class="k">Falso</span>
+<span class="linenos">10</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="m">4</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos">11</span>        <span class="k">Si</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span> <span class="o">=</span> <span class="n">buscar</span> <span class="k">Entonces</span>
+<span class="linenos">12</span>            <span class="n">encontrado</span> <span class="o">=</span> <span class="k">Verdadero</span>
+<span class="linenos">13</span>            <span class="k">Escribir</span> <span class="s">&quot;Número encontrado en la posición &quot;</span><span class="err">,</span> <span class="n">i</span>
+<span class="linenos">14</span>        <span class="k">FinSi</span>
+<span class="linenos">15</span>    <span class="k">FinPara</span>
+<span class="linenos">16</span>    <span class="k">Si</span> <span class="n">encontrado</span> <span class="o">=</span> <span class="k">Falso</span> <span class="k">Entonces</span>
+<span class="linenos">17</span>        <span class="k">Escribir</span> <span class="s">&quot;Número no encontrado&quot;</span>
+<span class="linenos">18</span>    <span class="k">FinSi</span>
+<span class="linenos">19</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">14. Contar la cantidad de números pares en un arreglo de N elementos.</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-pseudocode notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">Algoritmo</span> <span class="k">ContarPares</span>
+<span class="linenos"> 2</span>    <span class="k">Leer</span> <span class="n">n</span>
+<span class="linenos"> 3</span>    <span class="k">Dimension</span> <span class="n">nums</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>
+<span class="linenos"> 4</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="n">n</span><span class="o">-</span><span class="m">1</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 5</span>        <span class="k">Leer</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span>
+<span class="linenos"> 6</span>    <span class="k">FinPara</span>
+<span class="linenos"> 7</span>    <span class="n">contador</span> <span class="o">=</span> <span class="m">0</span>
+<span class="linenos"> 8</span>    <span class="k">Para</span> <span class="n">i</span> <span class="k">Desde</span> <span class="m">0</span> <span class="k">Hasta</span> <span class="n">n</span><span class="o">-</span><span class="m">1</span> <span class="k">Con</span> <span class="k">Paso</span> <span class="m">1</span> <span class="k">Hacer</span>
+<span class="linenos"> 9</span>        <span class="k">Si</span> <span class="n">nums</span><span class="err">[</span><span class="n">i</span><span class="err">]</span> <span class="err">%</span> <span class="m">2</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Entonces</span>
+<span class="linenos">10</span>            <span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="m">1</span>
+<span class="linenos">11</span>        <span class="k">FinSi</span>
+<span class="linenos">12</span>    <span class="k">FinPara</span>
+<span class="linenos">13</span>    <span class="k">Escribir</span> <span class="s">&quot;Cantidad de números pares: &quot;</span><span class="err">,</span> <span class="n">contador</span>
+<span class="linenos">14</span><span class="k">FinAlgoritmo</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<hr class="docutils" />
+<section id="desafios">
+<h2>Desafios<a class="headerlink" href="#desafios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escribir un algoritmo que funcione como una <strong>calculadora básica</strong>. El usuario debe ingresar dos números y una operación (suma, resta, multiplicación o división), y el programa debe mostrar el resultado correspondiente.</p></li>
+<li><p>Diseñar un algoritmo que <strong>convierta</strong> una cantidad de dinero <strong>de una moneda a otra</strong> (por ejemplo, de dólares a euros o pesos). El usuario deberá ingresar la cantidad y seleccionar la moneda de destino.</p></li>
+<li><p>Implementar un <strong>juego de adivinanza</strong> en el que el programa genera un número aleatorio entre 1 y 100, y el usuario debe adivinarlo. Después de cada intento, el programa debe indicar si el número es mayor o menor que la suposición del usuario.</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Diseñar un algoritmo que permita al usuario simular las funciones de un <strong>cajero automático</strong>. El usuario podrá consultar su saldo, realizar depósitos, retiros y salir del sistema. El programa debe validar que no se pueda retirar más dinero del que hay disponible.</p></li>
+<li><p>Diseñar un programa que simule el clásico juego <strong>del ahorcado</strong>. El programa debe seleccionar una palabra secreta y mostrarla como una serie de guiones. El usuario podrá ingresar letras una por una e ir descubriendo la palabra. Si la letra no está en la palabra, se debe descontar una vida. El juego termina cuando el usuario adivina la palabra o se queda sin intentos. Opcional: agregar una lista de palabras para elegir aleatoriamente y mostrar la cantidad de intentos restantes.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="main.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introducción a la programación</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Introducción a Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo">Algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo">Pseudocódigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-de-flujo">Diagramas de Flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-sencillos">Ejercicios sencillos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desafios">Desafios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniel Estrada
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Daniel Estrada.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
